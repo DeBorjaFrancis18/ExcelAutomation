@@ -180,3 +180,255 @@ For Each item In uniqueItems
 Next item
 
 End Sub
+
+
+Sub Generate_Table()
+
+    Dim x As String
+    Dim Splitx() As String
+    Dim uniqueItems As Collection
+    Dim item As Variant
+    Dim i As Integer
+    Dim j As Integer
+
+    On Error GoTo ErrorHandler
+
+    ' Read the value from the cell
+    x = Sheets("Change Request -new").Cells(12, 2).Value
+
+    ' Check if the value is not empty
+    If x <> "" Then
+        ' Display the value for diagnostic purposes
+        MsgBox "Value of x: " & x
+
+        ' Split the value by "/"
+        Splitx = Split(x, "/")
+        
+        ' Initialize the collection
+        Set uniqueItems = New Collection
+        
+        ' Loop through the split parts
+        For i = LBound(Splitx) To UBound(Splitx)
+            ' Check if the part contains a new line
+            If InStr(Splitx(i), vbCrLf) > 0 Then
+                ' Split further by new line
+                Dim TempSplit() As String
+                TempSplit = Split(Splitx(i), vbCrLf)
+                ' Add each part to the collection
+                For j = LBound(TempSplit) To UBound(TempSplit)
+                    uniqueItems.Add TempSplit(j), CStr(TempSplit(j))
+                Next j
+            Else
+                ' Add the part directly to the collection
+                uniqueItems.Add Splitx(i), CStr(Splitx(i))
+            End If
+        Next i
+
+        ' Display the unique items
+        Dim counter As Integer
+        counter = 1
+        For Each item In uniqueItems
+            MsgBox "Item " & counter & ": " & CStr(item)
+            counter = counter + 1
+        Next item
+    Else
+        MsgBox "Value of x is empty."
+    End If
+
+ExitSub:
+    Exit Sub
+
+ErrorHandler:
+    MsgBox "Error: " & Err.Description
+    Resume ExitSub
+
+End Sub
+Sub Generate_Table()
+
+    Dim x As String
+    Dim Splitx() As String
+    Dim uniqueItems As Collection
+    Dim item As Variant
+    Dim i As Integer
+    Dim j As Integer
+
+    On Error GoTo ErrorHandler
+
+    ' Read the value from the cell
+    x = Sheets("Change Request -new").Cells(12, 2).Value
+
+    ' Check if the value is not empty
+    If x <> "" Then
+        ' Display the value for diagnostic purposes
+        MsgBox "Value of x: " & x
+
+        ' Split the value by "/"
+        Splitx = Split(x, "/")
+        
+        ' Initialize the collection
+        Set uniqueItems = New Collection
+        
+        ' Loop through the split parts
+        For i = LBound(Splitx) To UBound(Splitx)
+            ' Check if the part contains a new line
+            If InStr(Splitx(i), vbCrLf) > 0 Then
+                ' Split further by new line
+                Dim TempSplit() As String
+                TempSplit = Split(Splitx(i), vbCrLf)
+                ' Add each part to the collection
+                For j = LBound(TempSplit) To UBound(TempSplit)
+                    uniqueItems.Add TempSplit(j), CStr(TempSplit(j))
+                Next j
+            Else
+                ' Add the part directly to the collection
+                uniqueItems.Add Splitx(i), CStr(Splitx(i))
+            End If
+        Next i
+
+        ' Display the unique items
+        Dim counter As Integer
+        counter = 1
+        For Each item In uniqueItems
+            MsgBox "Item " & counter & ": " & CStr(item)
+            counter = counter + 1
+        Next item
+    Else
+        MsgBox "Value of x is empty."
+    End If
+
+ExitSub:
+    Exit Sub
+
+ErrorHandler:
+    MsgBox "Error: " & Err.Description
+    Resume ExitSub
+
+End Sub
+Sub Generate_Table()
+
+    Dim x As String
+    Dim Splitx() As String
+    Dim uniqueItems As Collection
+    Dim item As Variant
+    Dim i As Integer
+    Dim j As Integer
+
+    On Error GoTo ErrorHandler
+
+    ' Read the value from the cell
+    x = Sheets("Change Request -new").Cells(12, 2).Value
+
+    ' Check if the value is not empty
+    If x <> "" Then
+        ' Display the value for diagnostic purposes
+        MsgBox "Value of x: " & x
+
+        ' Split the value by "/"
+        Splitx = Split(x, "/")
+        
+        ' Initialize the collection
+        Set uniqueItems = New Collection
+        
+        ' Loop through the split parts
+        For i = LBound(Splitx) To UBound(Splitx)
+            ' Check if the part contains a new line
+            If InStr(Splitx(i), vbCrLf) > 0 Then
+                ' Split further by new line
+                Dim TempSplit() As String
+                TempSplit = Split(Splitx(i), vbCrLf)
+                ' Add each part to the collection
+                For j = LBound(TempSplit) To UBound(TempSplit)
+                    uniqueItems.Add TempSplit(j), CStr(TempSplit(j))
+                Next j
+            Else
+                ' Add the part directly to the collection
+                uniqueItems.Add Splitx(i), CStr(Splitx(i))
+            End If
+        Next i
+
+        ' Display the unique items
+        Dim counter As Integer
+        counter = 1
+        For Each item In uniqueItems
+            MsgBox "Item " & counter & ": " & CStr(item)
+            counter = counter + 1
+        Next item
+    Else
+        MsgBox "Value of x is empty."
+    End If
+
+ExitSub:
+    Exit Sub
+
+ErrorHandler:
+    MsgBox "Error: " & Err.Description
+    Resume ExitSub
+
+
+
+
+
+
+
+
+Sub Generate_Table()
+
+    Dim x As String
+    Dim Splitx() As String
+    Dim uniqueItems As Collection
+    Dim item As Variant
+    Dim i As Integer
+    Dim j As Integer
+
+    On Error GoTo ErrorHandler
+
+    ' Read the value from the cell
+    x = Sheets("Change Request -new").Cells(12, 2).Value
+
+    ' Check if the value is not empty
+    If x <> "" Then
+        ' Display the value for diagnostic purposes
+        MsgBox "Value of x: " & x
+
+        ' Split the value by "/"
+        Splitx = Split(x, "/")
+        
+        ' Initialize the collection
+        Set uniqueItems = New Collection
+        
+        ' Loop through the split parts
+        For i = LBound(Splitx) To UBound(Splitx)
+            ' Check if the part contains a new line
+            If InStr(Splitx(i), vbCrLf) > 0 Then
+                ' Split further by new line
+                Dim TempSplit() As String
+                TempSplit = Split(Splitx(i), vbCrLf)
+                ' Add each part to the collection
+                For j = LBound(TempSplit) To UBound(TempSplit)
+                    uniqueItems.Add TempSplit(j), CStr(TempSplit(j))
+                Next j
+            Else
+                ' Add the part directly to the collection
+                uniqueItems.Add Splitx(i), CStr(Splitx(i))
+            End If
+        Next i
+
+        ' Display the unique items
+        Dim counter As Integer
+        counter = 1
+        For Each item In uniqueItems
+            MsgBox "Item " & counter & ": " & CStr(item)
+            counter = counter + 1
+        Next item
+    Else
+        MsgBox "Value of x is empty."
+    End If
+
+ExitSub:
+    Exit Sub
+
+ErrorHandler:
+    MsgBox "Error: " & Err.Description
+    Resume ExitSub
+
+End Sub
