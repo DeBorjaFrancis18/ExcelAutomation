@@ -79,3 +79,10 @@ For Each item In uniqueItems
     MsgBox item
 
 End Sub
+
+
+
+"Ship Point/Ship-to/Unl.Point/LEOService/Sval
+Ship Point/Ship-to/LEOService/Sval
+Country/Ship-to/LEOService/Sval
+Ship Point/Sold-to pt/LEOService/Sval"
