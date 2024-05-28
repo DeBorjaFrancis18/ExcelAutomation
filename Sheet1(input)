@@ -128,3 +128,55 @@ End Sub
 Ship Point/Ship-to/LEOService/Sval
 Country/Ship-to/LEOService/Sval
 Ship Point/Sold-to pt/LEOService/Sval"
+
+
+
+
+
+
+Sub Generate_Table()
+
+Dim x As String
+Dim y As String
+Dim z As String
+Dim Splitx() As String
+Dim Splity() As String
+Dim Splitz() As String
+Dim uniqueItems As Collection
+Dim item As Variant
+Dim i As Integer
+Dim j As Integer
+Dim TempSplit() As String
+
+
+x = Sheets("Change Request -new").Cells(12, 2).Value
+y = Sheets("Change Request -new").Cells(14, 2).Value
+z = Sheets("Change Request -new").Cells(16, 2).Value
+
+Message = "x: " & x & vbCrLf & "y: " & y & vbCrLf & "z: " & z
+MsgBox Message
+
+Splitx = Split(x, "/")
+
+Set uniqueItems = New Collection
+
+On Error Resume Next
+For i = LBound(Splitx) To UBound(Splitx)
+    If InStr(Splitx(i), vbCrLf) > 0 Then
+    TempSplit = Split(Splitx(i), vbCrLf)
+    For j = LBound(TemptSplit) To UBound(TempSplit)
+        uniqueItems.Add Splitx(i), Splitx(i)
+    Next j
+    Else
+        uniqueItems.Add TempSplit(i), TempSplit(i)
+    End If
+Next i
+On Error GoTo 0
+
+counter = 1
+For Each item In uniqueItems
+    MsgBox "Item " & counter & ": " & item
+    counter = counter + 1
+Next item
+
+End Sub
