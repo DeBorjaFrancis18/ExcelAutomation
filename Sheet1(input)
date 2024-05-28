@@ -37,46 +37,45 @@ exitError:
   Application.EnableEvents = True
 End Sub
 
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
 
-
-Sub Generate_Table()
-    Dim x As String
-    Dim y As String
-    Dim z As String
-    Dim splitResult() As String
-    Dim uniqueItems As Collection
-    Dim item As Variant
-    Dim i As Integer
-
-    x = Sheets("Change Request -new").Cells(12, 2).Value
-    y = Sheets("Change Request -new").Cells(14, 2).Value
-    z = Sheets("Change Request -new").Cells(16, 2).Value
-
-    ' Concatenate the values into a single string
-    Dim message As String
-    message = "x: " & x & vbCrLf & "y: " & y & vbCrLf & "z: " & z
-    MsgBox message
-
-    ' Example of splicing a string value from cell x
-    splitResult = Split(x, "/")
-    
-    ' Initialize the Collection
-    Set uniqueItems = New Collection
-    
-    ' Add items to the Collection, avoiding duplicates
-    On Error Resume Next
-    For i = LBound(splitResult) To UBound(splitResult)
-        uniqueItems.Add splitResult(i), splitResult(i)
-    Next i
-    On Error GoTo 0
-
-    ' Display the unique items
-    For Each item In uniqueItems
-        MsgBox item
-    Next item
 End Sub
 
 
-Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+
+
+
+
+Sub Generate_Table()
+
+Dim x As String
+Dim y As String
+Dim z As String
+Dim Splitx() As String
+Dim Splity() As String
+Dim Splitz() As String
+Dim uniqueItems As Collection
+Dim item As Variant
+Dim i As Integer
+
+x = Sheets("Change Request -new").Cells(12, 2).Value
+y = Sheets("Change Request -new").Cells(14, 2).Value
+z = Sheets("Change Request -new").Cells(16, 2).Value
+
+Message = "x: " & x & vbCrLf & "y: " & y & vbCrLf & "z: " & z
+MsgBox Message
+
+Splitx = Split(x, "/")
+
+Set uniqueItems = New Collection
+
+On Error Resume Next
+For i = LBound(Splitx) To UBound(Splitx)
+    uniqueItems.Add Splitx(i), Splitx(i)
+Next i
+On Error GoTo 0
+
+For Each item In uniqueItems
+    MsgBox item
 
 End Sub
